@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation-duration: 5s;
+}
+
+:root {
+	view-transition-name: none;
+}
+
+header {
+	view-transition-name: header;
+}

@@ -1,0 +1,19 @@
+export interface IGetAllProductResponse {
+  limit: number
+  products: IAllProducts[]
+  skip: number
+  total: number
+}
+export interface IAllProducts {
+  id: number
+  title: string
+  description: string
+  price: number
+  discountPercentage: number
+  rating: number
+  stock: number
+  brand: number
+  category: string
+  thumbnail: number
+  images: string[]
+}
