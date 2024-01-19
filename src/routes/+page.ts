@@ -1,31 +1,30 @@
 import { ApiCall } from "../api/api"
 import { apiEndpoints } from "../api/apiEndpoints"
-import type { IGetAllProductResponse } from "../interface/IProductResponse"
+import type { IGetAllProductResponse, IProductDetail } from "../interface/IProductResponse"
 interface ILoadParams {
   id?: number
 }
 
-export const load = async ({id = 1}: ILoadParams) => {
+export const load = async ({id}: ILoadParams) => {
   let responseGetAllProducts: IGetAllProductResponse = {
     limit: 0,
     products: [],
     skip: 0,
     total: 0
   }
-  let responseGetProductDetail
-  // : IProductDetail = {
-  //   id: 0,
-  //   title: '',
-  //   description: '',
-  //   price: 0,
-  //   discountPercentage: 0,
-  //   rating: 0,
-  //   stock: 0,
-  //   brand: 0,
-  //   category: '',
-  //   thumbnail: 0,
-  //   images: []
-  // }
+  let responseGetProductDetail: IProductDetail = {
+    id: 0,
+    title: '',
+    description: '',
+    price: 0,
+    discountPercentage: 0,
+    rating: 0,
+    stock: 0,
+    brand: 0,
+    category: '',
+    thumbnail: 0,
+    images: []
+  }
 
   try {
     responseGetAllProducts = await ApiCall.get(apiEndpoints.products)
