@@ -4,6 +4,7 @@
 
 	export let data;
 	$: products = data.responseGetAllProducts.products;
+	$: productsDetail = data.responseGetProductDetail;
 </script>
 
 <div transition:fly={{ y: 100, duration: 500, easing: linear }}>
@@ -14,6 +15,8 @@
 			{/if}
 		{/each}
 	</div>
+	<h1>{productsDetail.title}</h1>
+	<h1>{productsDetail.description}</h1>
 </div>
 
 <style lang="css">

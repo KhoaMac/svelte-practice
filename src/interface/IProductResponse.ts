@@ -1,10 +1,10 @@
 export interface IGetAllProductResponse {
   limit: number
-  products: IAllProducts[]
+  products: IProductDetail[]
   skip: number
   total: number
 }
-export interface IAllProducts {
+export interface IProductDetail {
   id: number
   title: string
   description: string
